@@ -18,33 +18,33 @@ const handleTransitionEnd = evt => {
 }
 
 const handleBtnClick = evt => {
-  // FLIP: First
   let btnDimensions = btn.getBoundingClientRect();
   let {clientX, clientY} = evt;
   // es5 alternative
   // var clientX = evt.clientX
   // var clientY = evt.clientY
 
-  let relPosX = clientX - btnDimensions.left;
-  let relPosY = clientY - btnDimensions.top;
+  let relUserClickX = clientX - btnDimensions.left;
+  let relUserClickY = clientY - btnDimensions.top;
 
   // Grab the max dimension and multiply by >2x to account for radius of ripple
   let scale = Math.max(btnDimensions.width, btnDimensions.height) * 2.5;
 
   // assign location of ripple to user's mouse click
-  ripple.style.transform = `translate(${relPosX}px, ${relPosY}px)`;
+  ripple.style.transform = `translate(${relUserClickX}px, ${relUserClickY}px)`;
   // es5 alternative
   // ripple.style.transform = 'translate(' + relPosX + 'px, ' + relPosY + 'px)';
 
   // rAF to make sure the above styles have been applied and we have a new frame
   rippleAnimation = requestAnimationFrame(_ => {
+    // turn on animations
     ripple.classList.add('btn--ripple__animate');
-    // perform our animations of expanding the ripple, and fading it out
+    // expanding the ripple
     ripple.style.transform += ` scale(${scale})`;
+    // fade out
     ripple.classList.add('btn--ripple__fade');
   });
 }
 
 btn.addEventListener('mousedown', handleBtnClick, false);
 btn.addEventListener('transitionend', handleTransitionEnd, false);
-
