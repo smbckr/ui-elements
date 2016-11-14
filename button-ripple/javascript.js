@@ -1,5 +1,3 @@
-/* ripple effect on buttons */
-
 const btn = document.querySelector('.btn');
 const ripple = document.querySelector('.btn--ripple');
 let rippleAnimation = 0;
