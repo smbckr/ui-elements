@@ -1,0 +1,47 @@
+.btn {
+  width: 200px;
+  height: 80px;  
+  border: 1px solid #999;
+  border-radius: 5px;
+  margin: 100px auto;
+  display: block;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  font-family: Ariel;
+  font-size: 26pt;
+  color: #fff;
+  background-color: #0097a7;
+  opacity: 1;  
+  box-shadow: 0 2px 5px rgba(0,0,0,.25); 
+}
+
+.btn:focus, 
+.btn:hover {
+  opacity: .95;
+  outline: none;
+}
+
+.btn:hover {
+  box-shadow: none;
+}
+
+.ripple {
+  width: 1px;
+  height: 1px;
+  top: 0;
+  left: 0;
+  background-color: #bbb;
+  border-radius: 50%;
+  position: absolute;
+  opacity: .5;
+  will-change: transform, opacity;
+}
+
+.ripple--fade {  
+  opacity: 0;
+}
+
+.ripple--animate {  
+  transition: transform 0.7s cubic-bezier(.4,0,1,1), opacity 0.8s cubic-bezier(.4,0,1,1);
+}
