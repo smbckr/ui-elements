@@ -37,12 +37,12 @@
 }
 
 .btn--ripple {
-  width: 1px;
-  height: 1px;
+  width: 2px;
+  height: 2px;
   top: 0;
   left: 0;
   background-color: #bbb;
-  border-radius: 50%;
+  border-radius: 100px;
   position: absolute;
   opacity: .5;
   will-change: transform, opacity;

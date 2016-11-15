@@ -28,7 +28,7 @@ const handleBtnClick = evt => {
   let relUserClickY = clientY - btnDimensions.top;
 
   // Grab the max dimension and multiply by >2x to account for radius of ripple
-  let scale = Math.max(btnDimensions.width, btnDimensions.height) * 2.5;
+  let scale = Math.max(btnDimensions.width, btnDimensions.height) * 2.5 / 2;
 
   // assign location of ripple to user's mouse click
   ripple.style.transform = `translate(${relUserClickX}px, ${relUserClickY}px)`;
