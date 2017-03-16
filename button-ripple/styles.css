@@ -22,8 +22,12 @@
   /* If you want the text positioned above the ripple */
   /* z-index: 1; */
   color: #eee;
-  font-family: Ariel;
+  font-family: sans-serif;
   font-size: 26pt;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-family: sans-serif;
+  font-weight: 200;
 }
 
 .btn:focus,
